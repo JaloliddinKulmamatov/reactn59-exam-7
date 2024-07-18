@@ -30,7 +30,7 @@ const Card = ({ product, cart, setCart }) => {
 
         <strong>{product.price}$</strong>
         <div>
-          <Button onClick={() => setCart([...cart, product])}>
+          <Button >
             <FaCartShopping color="white"/>
             <span style={{ marginLeft: "0.8em", color:"#fff" }}>Add to Cart</span>
           </Button>

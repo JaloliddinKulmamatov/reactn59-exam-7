@@ -1,0 +1,141 @@
+@import url(https://fonts.googleapis.com/earlyaccess/nicomoji.css);
+
+.topic {
+  background: #0D2613;
+  color: #fff;
+  padding: 20px;
+
+  @media (min-width: 768px) {
+    padding: 20px 100px;
+  }
+
+  select {
+    color: #fff;
+  }
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 20px;
+
+    @media (min-width: 768px) {
+      flex-direction: row;
+    }
+
+    li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      @media (min-width: 768px) {
+        gap: 25px;
+      }
+
+      img {
+        width: auto;
+      }
+    }
+
+    .topic__logo {
+      gap: 25px;
+      h1 {
+      font-family: 'Nico Moji';
+      font-size: 30px;
+      font-weight: 400;
+      line-height: 30px;
+
+      }
+    }
+
+    .topic__shop {
+      gap: 25px;
+
+      h1 {
+        color: #14FF00;
+        font-weight: 400;
+      }
+    }
+
+    .topic__location {
+      gap: 20px;
+
+      @media (min-width: 768px) {
+        gap: 44px;
+      }
+
+      span {
+        display: flex;
+        gap: 10px;
+
+        @media (min-width: 768px) {
+          gap: 20px;
+        }
+      }
+    }
+  }
+}
+
+.navbar {
+  padding: 25px;
+
+  @media (min-width: 768px) {
+    padding: 25px 100px;
+  }
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 2px solid #E9E7E7;
+    gap: 1rem;
+    align-items: center;
+    padding: 1.5rem;
+    justify-content: space-between;
+
+    @media (min-width: 768px) {
+      flex-direction: row;
+      padding: 1.5rem 2rem;
+    }
+
+    .navLinks {
+      display: flex;
+      gap: 20px;
+
+      @media (min-width: 768px) {
+        gap: 40px;
+      }
+    }
+
+    li {
+      position: relative;
+      h1 {
+      font-family: 'Nico Moji';
+       }
+    }
+  }
+
+  .cart-count {
+    position: absolute;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    background-color: greenyellow;
+    min-width: 10px;
+    min-height: 10px;
+    padding: 0.2em 0.6em;
+    display: grid;
+    place-items: center;
+    left: 60%;
+    bottom: 60%;
+  }
+
+  a,
+  a:visited {
+    text-decoration: none;
+    color: black;
+  }
+
+  a.activeLink {
+    font-weight: 500;
+    color: cornflowerblue;
+  }
+}

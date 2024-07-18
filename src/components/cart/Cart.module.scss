@@ -1,0 +1,157 @@
+.cartPage {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background: #f9f9f9;
+
+    .cartContainer {
+        flex: 2;
+        padding: 20px;
+        background: #fff;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+        h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .cartHeader {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px dashed #ddd;
+            padding-bottom: 10px;
+
+            ul {
+                display: flex;
+                width: 100%;
+                justify-content: space-between;
+                list-style: none;
+                padding: 0;
+
+                li {
+                    font-weight: bold;
+                    text-align: center;
+                    width: 33%;
+                }
+            }
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+
+            li {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 10px 0;
+                border-bottom: 1px solid #ddd;
+
+                .productDetails {
+                    display: flex;
+                    align-items: center;
+                    width: 100%;
+
+                    .productInf {
+                        display: flex;
+                        align-items: center;
+                        flex: 2;
+
+                        img {
+                            width: 80px;
+                            height: auto;
+                            margin-right: 20px;
+                        }
+
+                        span {
+                            display: flex;
+                            flex-direction: column;
+
+                            h4 {
+                                margin: 0;
+                                font-size: 18px;
+                            }
+
+                            p {
+                                margin: 0;
+                                color: #555;
+                            }
+                        }
+                    }
+
+                    .productDetailsBtn {
+                        display: flex;
+                        align-items: center;
+                        flex: 1;
+                        justify-content: center;
+
+                        button {
+                            background: none;
+                            border: 1px solid #ddd;
+                            padding: 5px 10px;
+                            margin: 0 5px;
+                            cursor: pointer;
+                        }
+                    }
+
+                    .price {
+                        font-size: 18px;
+                        font-weight: bold;
+                        flex: 1;
+                        text-align: right;
+                    }
+                }
+            }
+        }
+    }
+
+    .cartTotals {
+        flex: 1;
+        padding: 20px;
+        background: #fff;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        margin-left: 20px;
+
+        h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .totalsItem,
+        .total {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px dashed #ddd;
+            font-size: 18px;
+        }
+
+        .total {
+            font-weight: bold;
+            border-bottom: none;
+        }
+
+        .checkoutButton {
+            width: 100%;
+            padding: 15px;
+            margin-top: 20px;
+            background: #28a745;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .backToShopping {
+            display: block;
+            margin-top: 20px;
+            text-align: center;
+            color: #000;
+            text-decoration: none;
+        }
+    }
+}

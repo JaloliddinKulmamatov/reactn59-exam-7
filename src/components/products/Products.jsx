@@ -3,7 +3,9 @@ import styles from "./Products.module.scss";
 import Card from "../card/Card";
 import { useDispatch, useSelector } from "react-redux";
 import { addProducts } from "../../store/productsSlice";
+import { FaArrowUp } from 'react-icons/fa';
 import Loading from "../loading/Loading";
+import Notfounded from "../notfounded/Notfounded";
 
 const baseURL = import.meta.env.VITE_BASE_URL;
 
@@ -16,6 +18,7 @@ const Products = ({ cart, setCart }) => {
   const [colors, setColors] = useState([]);
   const [filters, setFilters] = useState({ brand: "", color: "" });
   const [sortOrder, setSortOrder] = useState("");
+  const [isVisible, setIsVisible] = useState(false);
 
 
   useEffect(() => {
@@ -97,8 +100,53 @@ const Products = ({ cart, setCart }) => {
         } 
   });
 
+    useEffect(() => {
+      const handleScroll = () => {
+        if (window.scrollY > 300) {
+          setIsVisible(true);
+        } else {
+          setIsVisible(false);
+        }
+      };
+
+      window.addEventListener("scroll", handleScroll);
+
+      return () => {
+        window.removeEventListener("scroll", handleScroll);
+      };
+    }, []);
+      const scrollToTop = () => {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
+      };
+
   return (
     <div className={styles.container}>
+      {isVisible && (
+        <button
+          onClick={scrollToTop}
+          style={{
+            position: "fixed",
+            bottom: "2rem",
+            right: "2rem",
+            backgroundColor: "#000",
+            color: "#fff",
+            border: "none",
+            borderRadius: "50%",
+            width: "40px",
+            height: "40px",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            cursor: "pointer",
+            boxShadow: "0 2px 10px rgba(0, 0, 0, 0.2)",
+          }}
+        >
+          <FaArrowUp />
+        </button>
+      )}
       <aside>
         <div>
           <h2>Sort by</h2>
@@ -167,7 +215,7 @@ const Products = ({ cart, setCart }) => {
             ))}
           </div>
         ) : (
-          <p>No products</p>
+          <Notfounded />
         )}
       </main>
     </div>
